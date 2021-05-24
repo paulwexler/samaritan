@@ -1,0 +1,30 @@
+<style>
+  .TextWrap {
+    float: left;
+    margin: 10px;
+  }
+</style>
+<p>
+Book {{ book.id }}
+<br>
+<h2>
+{{ book.author }}
+<br>
+{{ book.title }}
+<br>
+</h2>
+Published {{ book.published }}
+<br>
+<img src="{{ book.image }}" class="TextWrap">
+{{ book.description }}
+</p>
+<p>
+<br>
+<br>
+<br>
+<form action="{% url 'book_detail' book.id %}" method="post">
+  {% csrf_token %}
+  {{ form }}
+  <input type="submit" value="Submit review">
+</form>
+</p>

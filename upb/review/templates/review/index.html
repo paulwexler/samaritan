@@ -1,0 +1,29 @@
+<style>
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 5px;
+  }
+  th {
+    text-align: left;
+  }
+</style>
+<p>
+Click on a book title to add a review 
+</p>
+<table>
+  <th>Author</th>
+  <th>Published</th>
+  <th>Title</th>
+{% for book in books %}
+  <tr>
+    <td>{{ book.author }}</td>
+    <td>{{ book.published }}</td>
+    <td>
+      <a href="book/{{ book.id }}">"{{ book.title }}"</a>
+    </td>
+  </tr>
+{% endfor %}
+</table>
